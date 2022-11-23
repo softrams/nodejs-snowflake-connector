@@ -1,0 +1,27 @@
+{
+  "name": "@softrams/nodejs-mysql-connector",
+  "version": "0.0.13",
+  "description": "Database connector wrapper to work with MySQL database from nodejs applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softrams/nodejs-mysql-connector.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "MySQL",
+    "Database"
+  ],
+  "author": "Murali (murali@softrams.com)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/softrams/nodejs-mysql-connector/issues"
+  },
+  "homepage": "https://github.com/softrams/nodejs-mysql-connector#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
