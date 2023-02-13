@@ -1,6 +1,6 @@
 {
   "name": "@softrams/nodejs-snowflake-connector",
-  "version": "0.0.02",
+  "version": "0.0.03",
   "description": "Database connector wrapper to work with Snowflake database from nodejs applications",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/softrams/nodejs-snowflake-connector#readme",
   "dependencies": {
-    "snowflake-sdk": "^1.6.16"
+    "snowflake-sdk": "^1.6.18"
   }
 }
