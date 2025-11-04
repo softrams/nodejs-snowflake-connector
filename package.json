@@ -1,6 +1,6 @@
 {
   "name": "@softrams/nodejs-snowflake-connector",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Database connector wrapper to work with Snowflake database from nodejs applications",
   "main": "index.js",
   "scripts": {
@@ -11,17 +11,38 @@
     "url": "git+https://github.com/softrams/nodejs-snowflake-connector.git"
   },
   "keywords": [
-    "Nodejs",
-    "Snowflake",
-    "Database"
+    "nodejs",
+    "snowflake", 
+    "database",
+    "connector",
+    "aws",
+    "secrets-manager",
+    "key-pair-auth",
+    "jwt-auth"
   ],
-  "author": "Michael Vogel (michael.vogel@softrams.com)",
-  "license": "UNLICENSED",
+  "author": "Michael Vogel <michael.vogel@softrams.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/softrams/nodejs-snowflake-connector/issues"
   },
   "homepage": "https://github.com/softrams/nodejs-snowflake-connector#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "dependencies": {
+    "aws-sdk": "^2.1692.0",
     "snowflake-sdk": "^2.0.3"
+  },
+  "peerDependencies": {
+    "aws-sdk": "^2.0.0"
   }
 }
