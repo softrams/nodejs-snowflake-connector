@@ -229,11 +229,11 @@ The connector provides detailed error messages for common configuration issues:
 ## Dependencies
 
 - **snowflake-sdk**: Snowflake's official Node.js driver
-- **aws-sdk**: AWS SDK for Secrets Manager integration
+- **@aws-sdk/client-secrets-manager**: AWS SDK v3 Secrets Manager client
 
 ## Requirements
 
-- Node.js >= 14.0.0
+- Node.js >= 20.0.0
 - Snowflake account with key pair authentication enabled
 - RSA private key (2048-bit minimum recommended)
 

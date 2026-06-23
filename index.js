@@ -4,14 +4,16 @@
 /* eslint-disable no-else-return */
 const snowflake = require("snowflake-sdk");
 const fs = require("fs");
-const AWS = require("aws-sdk");
+const { SecretsManagerClient, GetSecretValueCommand } = require("@aws-sdk/client-secrets-manager");
 
 let pools = {};
 let config = {};
 const genericError = 'An error occurred communicating with the database.';
+const CONNECTOR_VERSION = require('./package.json').version;
 
 exports.init = async (cfg) => {
   config = cfg;
+  console.log(`Snowflake Adapter: nodejs-snowflake-connector v${CONNECTOR_VERSION} initialized`);
 };
 
 /**
@@ -25,14 +27,13 @@ const getPrivateKeyFromSecrets = async (srcCfg) => {
     throw new Error('PRIVATE_KEY_SECRET_NAME is required but not provided');
   }
 
-  const secretsManager = new AWS.SecretsManager({ 
-    region: process.env.AWS_REGION || 'us-east-1',
-    apiVersion: '2017-10-17'
+  const secretsManager = new SecretsManagerClient({ 
+    region: process.env.AWS_REGION || 'us-east-1'
   });
   
-  const secretResult = await secretsManager.getSecretValue({
+  const secretResult = await secretsManager.send(new GetSecretValueCommand({
     SecretId: srcCfg.PRIVATE_KEY_SECRET_NAME
-  }).promise();
+  }));
   
   if (!secretResult.SecretString) {
     throw new Error(`Secret ${srcCfg.PRIVATE_KEY_SECRET_NAME} does not contain a SecretString`);
