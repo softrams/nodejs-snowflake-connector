@@ -229,7 +229,13 @@ The connector provides detailed error messages for common configuration issues:
 ## Dependencies
 
 - **snowflake-sdk**: Snowflake's official Node.js driver
-- **@aws-sdk/client-secrets-manager**: AWS SDK v3 Secrets Manager client
+
+## Peer Dependencies
+
+- **@aws-sdk/client-secrets-manager**: Required only when using AWS Secrets Manager for private key retrieval (`PRIVATE_KEY_SECRET_NAME`). This is a peer dependency and must be installed separately in your project:
+  ```
+  npm install @aws-sdk/client-secrets-manager
+  ```
 
 ## Requirements
 
